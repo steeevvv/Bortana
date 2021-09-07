@@ -28,19 +28,47 @@
     
 > topic asked_password_registration
   + *
-  * <call>registeruser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with.{topic=main}
+  * <call>registeruser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with. \n
+  ^ To show Top Rated Movies press 1 \n
+  ^ To show Most Popular Movies press 2 \n
+  ^ To show Top Rated TV Shows press 3 \n
+  ^ To show Most Popular TV Shows press 4 \n
+  ^ To show Similar Movies to a certain movie press 5 {topic=main}
   - There is a problem registering you.
 
 < topic
 
 > topic asked_password_authentication
   + *
-  * <call>authenticateuser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with.{topic=main}
+  * <call>authenticateuser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with. \n
+  ^ To show Top Rated Movies press 1 \n
+  ^ To show Most Popular Movies press 2 \n
+  ^ To show Top Rated TV Shows press 3 \n
+  ^ To show Most Popular TV Shows press 4 \n
+  ^ To show Recommendations based on a certain movie press 5 {topic=main}
   - Password incorrect, please enter your correct password.
 < topic
 
 
 > topic main
+  + 1
+  - <call>movies_toprated </call>
 
+  + 2 
+  - <call>movies_mostpopular </call>
 
-> topic
+  + 3
+  - <call>shows_toprated </call>
+
+  + 4
+  - <call>shows_mostpopular </call>
+
+  + 5 
+  - Please type the name of the movie you wish to get similar movies to: {topic=similar}
+
+  > topic similar
+  + *
+  - <call>similar_movies <star></call> {topic=main}
+  >topic
+
+< topic

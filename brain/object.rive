@@ -8,7 +8,6 @@
         return "false"
 < object
 
-
 > object registeruser python
     import utils
     success = utils.registerUser(str(args[0]), str(args[1]))
@@ -25,4 +24,34 @@
         return "true"
     else:
         return "false"
+< object
+
+> object movies_toprated python
+    import utils
+    movies = utils.TopRatedMovies()
+    return movies
+< object
+
+> object movies_mostpopular python
+    import utils
+    movies = utils.MostPopularMovies()
+    return movies
+< object
+
+> object shows_toprated python
+    import utils
+    shows = utils.TopRatedShows()
+    return shows
+< object
+
+> object shows_mostpopular python
+    import utils
+    shows = utils.MostPopularShows()
+    return shows
+< object
+
+> object similar_movies python
+    import utils
+    Movies = utils.SimilarMovies(str(args))
+    return Movies
 < object
