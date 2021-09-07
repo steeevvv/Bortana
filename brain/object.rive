@@ -1,0 +1,28 @@
+> object doesuserexist python
+    import utils
+    print("Arguments: ", args)
+    exist = utils.doesUserExist(str(args[0]))
+    if exist:
+        return "true"
+    else:
+        return "false"
+< object
+
+
+> object registeruser python
+    import utils
+    success = utils.registerUser(str(args[0]), str(args[1]))
+    if success:
+        return "true"
+    else:
+        return "false"
+< object
+
+> object authenticateuser python
+    import utils
+    success = utils.authenticateUser(str(args[0]), str(args[1]))
+    if success:
+        return "true"
+    else:
+        return "false"
+< object
