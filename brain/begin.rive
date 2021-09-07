@@ -1,9 +1,9 @@
-! version 2.0
+! version = 2.0
 
 > begin
 
   + request
-  * <get authorization> == undefined => <set authorization=true>{topic=new_user}{ok}
+  * <get authorization> == undefined => <set authorization=true> {topic=new_user}{ok}
   - {ok}
 
 < begin
@@ -11,8 +11,9 @@
 > topic new_user
 
   + *
-  - Hi! I'm <bot name>! You Movies Assistant chatbot.\s
-  ^ I am here to assist you finding Top Rated & Most Popular movies and TV Shows, also finding similar movies your favorites. \n
+  - Hi! I'm <bot name>! You Movies Assistant chatbot.\n
+  ^ I am here to assist you finding Top Rated & Most Popular movies and TV Shows, \n
+  ^ also finding similar movies your favorites. \n
   ^ But before we start...\n
   ^ What is your name?{topic=asked_name}
 
@@ -23,18 +24,23 @@
   * <call>doesuserexist <formal></call> == false => <set name=<formal>>Nice to meet you, <get name>! I see that you are new, please choose a password{topic=asked_password_registration}
   - <set name=<formal>>Nice to meet you, <get name>! I see that you have been registered already, please enter your password{topic=asked_password_authentication}
 
-< 
+< topic
     
- topic asked_password_registration
+> topic asked_password_registration
   + *
-  * <call>registeruser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with.{topic=main}\n{@help}
+  * <call>registeruser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with.{topic=main}
   - There is a problem registering you.
 
 < topic
 
 > topic asked_password_authentication
   + *
-  * <call>authenticateuser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with.{topic=main}\n{@help}
-  - Password incorrect, please enter a new password.
-
+  * <call>authenticateuser <get name> <star1></call> == true => You're all set! Now, let's move on to what I can help you with.{topic=main}
+  - Password incorrect, please enter your correct password.
 < topic
+
+
+> topic main
+
+
+> topic

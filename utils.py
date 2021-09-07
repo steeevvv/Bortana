@@ -19,7 +19,7 @@ def registerUser(user, password):
     val = (user, password)
     cur.execute(sql, val)
     mydb.commit()
-    print(cur.rowcount, "record inserted.")
+    #print(cur.rowcount, "record inserted.")
     return True
 
 def authenticateUser(user, password):
@@ -27,6 +27,6 @@ def authenticateUser(user, password):
     qry = "SELECT * FROM `user` WHERE `name`= '{}' AND `password`= {}".format(user, password)
     cur.execute(qry)
     user = cur.fetchone()
-    print(user)
+    #print(user)
     return False if user is None else True
 

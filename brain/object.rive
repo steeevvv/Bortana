@@ -1,6 +1,6 @@
 > object doesuserexist python
     import utils
-    print("Arguments: ", args)
+    #print("Arguments: ", args)
     exist = utils.doesUserExist(str(args[0]))
     if exist:
         return "true"
