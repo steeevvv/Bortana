@@ -28,55 +28,61 @@
 
 > object movies_toprated python
     import utils
-    movies = utils.TopRatedMovies()
+    movies,dates,votes = utils.TopRatedMovies()
     stri = ""
-    for i in movies:
-        stri = stri + i + "\n"
+    for i in range(0,10):
+        test = str(i+1) + ". " + movies[i] + " (" + dates[i] + ")" + " - " + str(votes[i]) +"/10"
+        stri = stri + test + "\n"
     return stri
 < object
 
 > object movies_mostpopular python
     import utils
-    movies = utils.MostPopularMovies()
+    movies,dates,votes = utils.MostPopularMovies()
     stri = ""
-    for i in movies:
-        stri = stri + i + "\n"
+    for i in range(0,10):
+        test = str(i+1) + ". " + movies[i] + " (" + dates[i] + ")" + " - " + str(votes[i]) +"/10"
+        stri = stri + test + "\n"
     return stri
 < object
 
 > object shows_toprated python
     import utils
-    shows = utils.TopRatedShows()
+    shows,dates, votes = utils.TopRatedShows()
     stri = ""
-    for i in shows:
-        stri = stri + i + "\n"
+    for i in range(0,10):
+        test = str(i+1) + ". " + shows[i] + " (" + dates[i] + ")" + " - " + str(votes[i]) +"/10"
+        stri = stri + test + "\n"
     return stri
 < object
 
 > object shows_mostpopular python
     import utils
-    shows = utils.MostPopularShows()
+    shows, dates, votes = utils.MostPopularShows()
     stri = ""
-    for i in shows:
-        stri = stri + i + "\n"
+    for i in range(0,10):
+        test = str(i+1) + ". " + shows[i] + " (" + dates[i] + ")" + " - " + str(votes[i]) +"/10"
+        stri = stri + test + "\n"
     return stri
 < object
 
 > object similar_movies python
     import utils
-    Movies = utils.SimilarMovies(str(args))
+    shows, dates, votes = utils.SimilarMovies(str(args))
     stri = ""
-    for i in Movies:
-        stri = stri + i + "\n"
+    for i in range(0,10):
+        test = str(i+1) + ". " + shows[i] + " (" + dates[i] + ")" + " - " + str(votes[i]) +"/10"
+        stri = stri + test + "\n"
     return stri
 < object
 
 > object moviesby_actor python
     import utils
-    Movies = utils.MoviesByActor(str(args))
+    shows, character = utils.MoviesByActor(str(args))
     stri = ""
-    for i in Movies:
-        stri = stri + i + "\n"
+    for i in range(0,10):
+        test = str(i+1) + ". " + shows[i] +  " - " + character[i]
+        stri = stri + test + "\n"
     return stri
 < object
 

@@ -11,7 +11,7 @@
 > topic new_user
 
   + *
-  - Hi! I'm <bot name>! You Movies Assistant chatbot.\n
+  - Hi! I'm <bot name>! Your Movies Assistant chatbot.\n
   ^ I am here to assist you exploring Top Rated & Most Popular movies and TV Shows, \n
   ^ and also finding similar movies your favorites. \n
   ^ But before we start...\n
@@ -47,10 +47,10 @@
   + [*] popular movies [*]
   - <call>movies_mostpopular </call>
 
-  + [*] top rated (shows | series | tv shows | tv) [*]
+  + [*] top rated (shows|series|tv shows|tv) [*]
   - <call>shows_toprated </call>
 
-  + [*] popular (shows | series | tv shows | tv) [*]
+  + [*] popular (shows|series|tv shows|tv) [*]
   - <call>shows_mostpopular </call>
 
   + get recommendations [*]
