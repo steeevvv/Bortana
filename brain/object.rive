@@ -29,29 +29,54 @@
 > object movies_toprated python
     import utils
     movies = utils.TopRatedMovies()
-    return movies
+    stri = ""
+    for i in movies:
+        stri = stri + i + "\n"
+    return stri
 < object
 
 > object movies_mostpopular python
     import utils
     movies = utils.MostPopularMovies()
-    return movies
+    stri = ""
+    for i in movies:
+        stri = stri + i + "\n"
+    return stri
 < object
 
 > object shows_toprated python
     import utils
     shows = utils.TopRatedShows()
-    return shows
+    stri = ""
+    for i in shows:
+        stri = stri + i + "\n"
+    return stri
 < object
 
 > object shows_mostpopular python
     import utils
     shows = utils.MostPopularShows()
-    return shows
+    stri = ""
+    for i in shows:
+        stri = stri + i + "\n"
+    return stri
 < object
 
 > object similar_movies python
     import utils
     Movies = utils.SimilarMovies(str(args))
-    return Movies
+    stri = ""
+    for i in Movies:
+        stri = stri + i + "\n"
+    return stri
 < object
+
+> object moviesby_actor python
+    import utils
+    Movies = utils.MoviesByActor(str(args))
+    stri = ""
+    for i in Movies:
+        stri = stri + i + "\n"
+    return stri
+< object
+

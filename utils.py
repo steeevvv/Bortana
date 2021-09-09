@@ -100,3 +100,25 @@ def SimilarMovies(movie):
         #print (movies)
         return movies
     return None
+
+
+
+def MoviesByActor(actor):
+    new_string = actor.replace(" ", "%20")
+    api_url1 = 'https://api.themoviedb.org/3/search/person?api_key=' + key + '&language=en-US&query==' + new_string + "&page=1&include_adult=false"
+    response1 = requests.get(api_url1)
+    if response1.status_code == 200:
+        actors1 = list()
+        for item in response1.json()['results']:
+            actors1.append(item['id'])
+    
+    actor_id = actors1[0]
+    api_url = "https://api.themoviedb.org/3/person/" + str(actor_id) + '/movie_credits?api_key=9a30d12144d08ecb0aff498b294d7cb7&language=en-US'
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        movies = list()
+        for item in response.json()['cast']:
+            movies.append(item['title'])
+        #print (movies)
+        return movies
+    return None
