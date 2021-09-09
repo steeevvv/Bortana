@@ -153,5 +153,5 @@ def MoviesByActor(actor):
             movies.append(item['title'])
             character.append(item['character'])
         #print (movies)
-        return movies, character
+        return True, movies, character
     return None

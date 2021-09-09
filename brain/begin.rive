@@ -53,11 +53,24 @@
   + [*] popular (shows|series|tv shows|tv) [*]
   - <call>shows_mostpopular </call>
 
-  + get recommendations [*]
+  + ([*] recommendations [*]|[*] similar [*]|[*] suggest [*]|[*] recommendation [*])
   - Please type the name of the movie you wish to get similar movies to: {topic=similar}
 
-  + [*] (movies|movie) by actor
-  - Please enter the name of the actor you wish to get movies for: {topic=actor}
+  + [*] (movies|movie) by [*]
+  - Would you clarify the name of the actor you wish to get movies for: {topic=actor}
+
+  + bye
+  - Goodbye, See you soon 
+  - I wish you could stay forever, bye
+  - Thanks for your time, bye
+
+  + goodbye
+  @ bye
+
+  + *
+  - Sometimes I don't have a reply, here is one :)
+  - I don't understand you, could you clarify
+  - Sorry, I can't help you with that
 
   > topic similar
   + *
@@ -69,8 +82,5 @@
   - <call>moviesby_actor <star></call> {topic=main}
   < topic
 
-  + *
-  - somethings i don't have a reply for, this is one
-  - I don't understand you, could you clarify
-  - Sorry, I can't help you with that
+  
 < topic
