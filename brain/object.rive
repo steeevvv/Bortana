@@ -1,6 +1,5 @@
 > object doesuserexist python
     import utils
-    #print("Arguments: ", args)
     exist = utils.doesUserExist(str(args[0]))
     if exist:
         return "true"
@@ -58,7 +57,7 @@
 
 > object shows_mostpopular python
     import utils
-    shows, dates, votes = utils.MostPopularShows()
+    shows,dates, votes = utils.MostPopularShows()
     stri = ""
     for i in range(0,10):
         test = str(i+1) + ". " + shows[i] + " (" + dates[i] + ")" + " - " + str(votes[i]) +"/10"

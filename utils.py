@@ -47,6 +47,7 @@ def TopRatedMovies():
             dates.append(item['release_date'])
             votes.append(item['vote_average'])
         years = getyear(dates)
+        print("ANA BA5roooooggg")
         return movies, years, votes
     return None
 
@@ -91,19 +92,22 @@ def MostPopularShows():
             movies.append(item['name'])
             dates.append(item['first_air_date'])
             votes.append(item['vote_average'])
-        #print (movies)
         years = getyear(dates)
         return movies, years, votes
     return None
+
 
 def getyear(dates): 
     years = list()
     st = ""
     for i in dates: 
-        for j in range(0,4):
-            st = st + str(i[j])
-        years.append(st)
-        st = ""
+        if i != "":
+            for j in range(0,4):
+                st = st + str(i[j])
+            years.append(st)
+            st = ""
+        else:
+            years.append("unknown")
     return years
 
 
@@ -153,5 +157,5 @@ def MoviesByActor(actor):
             movies.append(item['title'])
             character.append(item['character'])
         #print (movies)
-        return True, movies, character
+        return movies, character
     return None
