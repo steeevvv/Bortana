@@ -48,7 +48,7 @@ python main.py
 Flask should now be up and running, and you can send requests to the chatbot
 
 ### 6. Run the frontend
-to run the frontend, split terminal, then navigate to the directory `bot_front` and type the following commands:
+to run the frontend, split terminal, then navigate to the directory `frontend` and type the following commands:
 ```bash
 npm install
 npm start
